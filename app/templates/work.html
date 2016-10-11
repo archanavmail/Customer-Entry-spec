@@ -1,0 +1,31 @@
+<div class="row">
+  
+        <form class="form-inline " >
+            
+              <div class="form-group">
+                <button type="button" class="btn btn-danger" id="addItem"  data-toggle="modal" data-target="#addModal">Add Customer
+                </button>        
+               </div>
+</form>
+</div>
+<div id="workImgList" class="container-fluid" ng-hide="hideImage" ng-init="hideImage=false;">
+       <div class="row">
+         <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="work in works | filter:greaterThan1| filter:greaterThan2 | filter: search">
+           <li class="workImg" title="{{work.firstname}}">
+                    
+                    <p><h4>{{work.firstname}}</h4></p>
+                    <p><h5>{{work.lastname}}</h5></p>
+                    <p>{{work.email}}</p>
+                    <p>{{work.phonenumber}}</p>
+                     <p>{{work.address}}</p>
+                    <div class="update"><a ng-click="editItems(work)" data-toggle="modal" data-target="#editModal">edit</a> &nbsp;| &nbsp; <a ui-sref=".confirmBox" ng-click="deleteItem(work)" data-toggle="modal" data-target="#myModal">delete</a> </div>
+                </li>
+        </div>
+</div>
+  
+ </div>
+  
+  
+<div ui-view></div>
+<additemdirective></additemdirective>
+<edititemdirective></edititemdirective>

@@ -1,0 +1,54 @@
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="editModalLabel">Edit item</h4>
+        </div>
+        <div class="modal-body">
+          <form name="info_form2" ng-submit="nextForm2()" novalidate>
+            <div class="form-group" ng-class="{ 'has-error': info_form2.firstname.$touched && info_form2.firstname.$invalid }">
+              <input type="text" class="form-control" id="firstname" name="firstname" ng-model="editfirstname" 
+              ng-minlength="5"
+               ng-maxlength="10"
+               ng-pattern="/^[a-zA-Z]*$/" required/>
+              <div class="help-block" ng-messages="info_form2.firstname.$error" ng-if="info_form2.firstname.$touched" >
+              <p ng-message="minlength">Your firstname is too short.</p>
+              <p ng-message="maxlength">Your firstname is too long.</p>
+              <p ng-message="required">Your firstname is required.</p>
+              <p ng-message="pattern"> Only alphabets are allowed. </p>
+            </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': info_form2.lastname.$touched && info_form2.lastname.$invalid }">
+              <input type="text" class="form-control" id="lastname" name="lastname" ng-model="editlastname"
+              ng-minlength="5"
+               ng-maxlength="10"
+               ng-pattern="/^[a-zA-Z]*$/" required/>
+              <div class="help-block" ng-messages="info_form2.lastname.$error" ng-if="info_form2.lastname.$touched" >
+              <p ng-message="minlength">Your lastname is too short.</p>
+              <p ng-message="maxlength">Your lastname is too long.</p>
+              <p ng-message="required">Your lastname is required.</p>
+              <p ng-message="pattern"> Only alphabets are allowed. </p>
+            </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': info_form2.email.$touched && info_form2.email.$invalid }">
+              <input type="email" class="form-control" id="email" name="email" ng-model="editemail" required />
+              <div class="help-block" ng-messages="info_form2.email.$error" ng-if="info_form2.email.$touched" >
+              <p ng-message="required">Your email is required.</p>
+              <p ng-message="email"> Enter the valid email. </p>
+            </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="phonenumber" ng-model="editphonenumber"/>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="address" ng-model="editaddress"/>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" ng-disabled="info_form2.$invalid" ng-click="editConfirm()" data-dismiss="modal">submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>

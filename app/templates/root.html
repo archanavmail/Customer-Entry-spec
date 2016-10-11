@@ -1,0 +1,40 @@
+ <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header" id="brand">
+            <a class="navbar-brand" href="#">
+                    <img src="../assets/images/src/app/logo.png"/>
+            </a>
+        </div>
+        <ul class="nav navbar-nav" id="nav">
+            <h4>Customer Information</h4>
+        </ul>
+        <div class="container-fluid  visible-xs visible-sm" id="menuClick">
+            <div class="mobile-nav"> 
+            </div>
+        </div>
+        <div class="container-fluid  visible-md visible-lg" id="logout">
+        </div>
+    </div>
+</nav>
+<ul id="hiddenMenu" class="hidden">
+       
+     <li ng-class="{select:selected==2}" ng-click="selected=2"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span><a ui-sref=".work">Customers</a></li>
+  </ul>
+<div class="container-fluid">
+
+<div id="sidebar" class="col-xs-2">
+    <div class="container-fluid visible-md visible-lg">
+<div class="row">
+<li ng-class="{selectLarge:selected==2}" ng-click="selected=2"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span><a ui-sref=".work">Customer</a></li>
+        </div>
+</div>
+
+</div>
+
+
+<div class="col-xs-10">
+<div ui-view></div>
+</div>
+</div>
+
+<br/>
